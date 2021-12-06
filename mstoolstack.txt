@@ -1,0 +1,41 @@
+Business
+
+cost effective development
+opensource, medium scale application
+
+1.Spring boot, Vertx, Golang,Dropwizard
+2.MS Features --> Spring Cloud 
+
+Spring Cloud
+Service Discovery --> Eureka
+External Configuration--> Spring cloud Config and Vault Server along 
+with Cloud Bus
+API Gateway--Zuul with Ribbon
+Failure Handling-->Hystrix, CircuitBreaker
+API to API Interaction-> Kafka,Rabbitmq
+-------------------------------------------
+Business
+
+license  complex and large scale application
+
+1.Spring boot, Vertx, Golang,Dropwizard
+
+2.MS Features --> Docker,Kubernetes 
+Service Discovery --> Kubernete Reg, Docker Repository
+External Configuration--> Kubernetes Config Map
+API Gateway--Docker Swarm, Kubernete Master
+Failure Handling-->Pods
+API to API Interaction-> Kubernete Network
+
+
+Kubernetes
+
+1.Docker-Desktop Kube
+2. AWS Kube
+3.Azure Kube
+4.OPenshift Kube
+5. Minikube
+
+
+
+
