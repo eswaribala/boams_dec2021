@@ -11,3 +11,5 @@ kubectl apply -f mysql-deployment.yaml
 kubectl get pods
 kubectl get svc
 kubectl get deploy
+kubectl run -it --rm --image=mysql --restart=Never mysql-client -- mysql -h mysql -ppassword
+
