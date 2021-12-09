@@ -12,4 +12,8 @@ kubectl get pods
 kubectl get svc
 kubectl get deploy
 kubectl run -it --rm --image=mysql --restart=Never mysql-client -- mysql -h mysql -ppassword
+kubectl apply -f deployment-v7.yml
+kubectl expose deployment --port 7070 customerapp --type=LoadBalancer --name=customerservicev1
+kubectl port-forward svc/customerservicev1 8060:7070
+
 
