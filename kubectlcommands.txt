@@ -7,4 +7,7 @@ http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kube
 kubectl apply -f mysql-pv.yaml
 kubectl get pv
 kubectl get pvc
-
+kubectl apply -f mysql-deployment.yaml
+kubectl get pods
+kubectl get svc
+kubectl get deploy
