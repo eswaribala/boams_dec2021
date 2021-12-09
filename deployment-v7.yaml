@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: customerapp
+  name: customerapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: customerapp
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: customerapp
+    spec:
+      containers:
+      - image: eswaribala/boadec2021repo:v1
+        name: v1
+        resources: {}
+        env:
+            - name: MYSQL_URL
+              value: jdbc:mysql://mysql:3306/boamsdec2021customerdb?useSSL=false
+               
+
+status: {}
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: customerservice
+  name: customerservice
+spec:
+  ports:
+  - name: 7076-7070
+    port: 7070
+    protocol: TCP
+    targetPort: 7076
+  selector:
+    app: customerapp
+  type: ClusterIP
+status:
+  loadBalancer: {}
