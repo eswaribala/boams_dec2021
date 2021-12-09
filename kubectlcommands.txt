@@ -4,3 +4,7 @@ kubectl apply -f admin-role-binding.yml
 kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | sls admin-user | ForEach-Object { $_ -Split '\s+' } | Select -First 1)
 kubctl proxy
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+kubectl apply -f mysql-pv.yaml
+kubectl get pv
+kubectl get pvc
+
